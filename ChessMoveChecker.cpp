@@ -14,8 +14,6 @@ void ChessBoard::printBoardLayout()
         std::cout << (int)boardLayout[i] << ", ";
     }
     std::cout << std::endl;
-
-    std::cout << (int)boardLayout[convertToSquareID("B", 5)] << std::endl;
 }
 
 int ChessBoard::getPieceFromPosition(uint8_t position)
