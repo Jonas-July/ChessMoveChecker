@@ -1,5 +1,6 @@
-#include "ChessMoveChecker.hpp"
 #include "ChessMoveCheckerTest.hpp"
+#include "ChessMoveChecker.hpp"
+#include "AliasesChess.hpp"
 
 int testChessMoveChecker()
 {
