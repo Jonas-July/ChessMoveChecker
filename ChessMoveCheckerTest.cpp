@@ -5,18 +5,18 @@
 int testChessMoveChecker()
 {
     ChessBoard Board;
-    Board.movePiece(convertToSquareID("D", 2), convertToSquareID("D", 4));
-    if (Board.getPieceFromPosition(convertToSquareID("D", 2)) != 35) return 1;
-    if (Board.getPieceFromPosition(convertToSquareID("D", 4)) != 12) return 2;
-    Board.movePiece(convertToSquareID("D", 7), convertToSquareID("D", 5));
-    if (Board.getPieceFromPosition(convertToSquareID("D", 7)) != 35) return 3;
-    if (Board.getPieceFromPosition(convertToSquareID("D", 5)) != 29) return 4;
-    Board.movePiece(convertToSquareID("B", 1), convertToSquareID("C", 3));
-    if (Board.getPieceFromPosition(convertToSquareID("B", 1)) != 35) return 5;
-    if (Board.getPieceFromPosition(convertToSquareID("C", 3)) !=  1) return 6;
-    Board.movePiece(convertToSquareID("G", 8), convertToSquareID("F", 6));
-    if (Board.getPieceFromPosition(convertToSquareID("G", 8)) != 35) return 7;
-    if (Board.getPieceFromPosition(convertToSquareID("F", 6)) != 18) return 8;
+    Board.movePiece(convertToSquareID("D2"), convertToSquareID("D4"));
+    if (Board.getPieceFromPosition(convertToSquareID("D2")) != 35) return 1;
+    if (Board.getPieceFromPosition(convertToSquareID("D4")) != 12) return 2;
+    Board.movePiece(convertToSquareID("D7"), convertToSquareID("D5"));
+    if (Board.getPieceFromPosition(convertToSquareID("D7")) != 35) return 3;
+    if (Board.getPieceFromPosition(convertToSquareID("D5")) != 29) return 4;
+    Board.movePiece(convertToSquareID("B1"), convertToSquareID("C3"));
+    if (Board.getPieceFromPosition(convertToSquareID("B1")) != 35) return 5;
+    if (Board.getPieceFromPosition(convertToSquareID("C3")) !=  1) return 6;
+    Board.movePiece(convertToSquareID("G8"), convertToSquareID("F6"));
+    if (Board.getPieceFromPosition(convertToSquareID("G8")) != 35) return 7;
+    if (Board.getPieceFromPosition(convertToSquareID("F6")) != 18) return 8;
 
     Board.printBoardLayout();
 

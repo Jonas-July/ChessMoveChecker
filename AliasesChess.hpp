@@ -48,6 +48,6 @@ struct PieceNames
 
 };
 
-uint8_t convertToSquareID(const std::string column, uint8_t row);
+uint8_t convertToSquareID(const std::string position);
 
 #endif // PIECENAMES_HPP_INCLUDED
