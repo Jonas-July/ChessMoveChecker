@@ -4,56 +4,65 @@
 #include <stdint.h>
 #include <vector>
 
+#include "ChessPieces.hpp"
+
+struct PieceColors
+{
+    static const uint8_t white = 0;
+    static const uint8_t black = 1;
+};
+
 class ChessBoard
 {
 public:
     void printBoardLayout();
     void movePiece(uint8_t startingPos, uint8_t landingPos);
-    int getPieceFromPosition(uint8_t position);
+    ChessPiece getPieceFromPosition(uint8_t position);
+
+    uint8_t white = 0;
+    uint8_t black = 1;
 
 private:
 
-    uint8_t WhiteRookLeft    = 0;
-    uint8_t WhiteKnightLeft  = 1;
-    uint8_t WhiteBishopBlack = 2;
-    uint8_t WhiteKing        = 3;
-    uint8_t WhiteKingMoved   = 4;
-    uint8_t WhiteQueen       = 5;
-    uint8_t WhiteBishopWhite = 6;
-    uint8_t WhiteKnightRight = 7;
-    uint8_t WhiteRookRight   = 8;
+    BlankSquare Blank = BlankSquare();
 
-    uint8_t WhitePawnA =  9;
-    uint8_t WhitePawnB = 10;
-    uint8_t WhitePawnC = 11;
-    uint8_t WhitePawnD = 12;
-    uint8_t WhitePawnE = 13;
-    uint8_t WhitePawnF = 14;
-    uint8_t WhitePawnG = 15;
-    uint8_t WhitePawnH = 16;
+    Rook   WhiteRookLeft    = Rook   (white);
+    Knight WhiteKnightLeft  = Knight (white);
+    Bishop WhiteBishopBlack = Bishop (white);
+    King   WhiteKing        = King   (white);
+    Queen  WhiteQueen       = Queen  (white);
+    Bishop WhiteBishopWhite = Bishop (white);
+    Knight WhiteKnightRight = Knight (white);
+    Rook   WhiteRookRight   = Rook   (white);
 
-    uint8_t BlackRookLeft    = 17;
-    uint8_t BlackKnightLeft  = 18;
-    uint8_t BlackBishopBlack = 19;
-    uint8_t BlackKing        = 20;
-    uint8_t BlackKingMoved   = 21;
-    uint8_t BlackQueen       = 22;
-    uint8_t BlackBishopWhite = 23;
-    uint8_t BlackKnightRight = 24;
-    uint8_t BlackRookRight   = 25;
+    Pawn WhitePawnA = Pawn(white);
+    Pawn WhitePawnB = Pawn(white);
+    Pawn WhitePawnC = Pawn(white);
+    Pawn WhitePawnD = Pawn(white);
+    Pawn WhitePawnE = Pawn(white);
+    Pawn WhitePawnF = Pawn(white);
+    Pawn WhitePawnG = Pawn(white);
+    Pawn WhitePawnH = Pawn(white);
 
-    uint8_t BlackPawnA = 26;
-    uint8_t BlackPawnB = 27;
-    uint8_t BlackPawnC = 28;
-    uint8_t BlackPawnD = 29;
-    uint8_t BlackPawnE = 31;
-    uint8_t BlackPawnF = 32;
-    uint8_t BlackPawnG = 33;
-    uint8_t BlackPawnH = 34;
+    Rook   BlackRookLeft    = Rook   (black);
+    Knight BlackKnightLeft  = Knight (black);
+    Bishop BlackBishopBlack = Bishop (black);
+    King   BlackKing        = King   (black);
+    Queen  BlackQueen       = Queen  (black);
+    Bishop BlackBishopWhite = Bishop (black);
+    Knight BlackKnightRight = Knight (black);
+    Rook   BlackRookRight   = Rook   (black);
 
-    uint8_t Blank = 35;
+    Pawn BlackPawnA = Pawn(black);
+    Pawn BlackPawnB = Pawn(black);
+    Pawn BlackPawnC = Pawn(black);
+    Pawn BlackPawnD = Pawn(black);
+    Pawn BlackPawnE = Pawn(black);
+    Pawn BlackPawnF = Pawn(black);
+    Pawn BlackPawnG = Pawn(black);
+    Pawn BlackPawnH = Pawn(black);
 
-    uint8_t m_boardLayout[64] =
+    ChessPiece m_boardLayout[64] =
     {
      WhiteRookLeft   , WhitePawnA, Blank, Blank, Blank, Blank, BlackPawnA, BlackRookRight  ,
      WhiteKnightLeft , WhitePawnB, Blank, Blank, Blank, Blank, BlackPawnB, BlackKnightRight,
@@ -66,5 +75,9 @@ private:
     };
 
 };
+
+void generateStartingChessBoard(ChessPiece boardLayout[]);
+
+void movePiece(ChessPiece boardLayout[], uint8_t startingPos, uint8_t landingPos);
 
 #endif // CHESSBOARD_HPP_INCLUDED
